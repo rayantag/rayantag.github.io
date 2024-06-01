@@ -1,1 +1,190 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">RT</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#interests">Interests</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav"> 
+        <div class="logo">RT</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#interests" onclick="toggleMenu()">Interests</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="profile_info">
+            <div class="section_pic_container">
+                <img src="./assets/prof_pic.png" alt="a picture of me"/>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin-in.svg" alt="linkedin prof" class="icon" id="linkedin-icon">
+                <img src="./assets/github.svg" alt="github prof" class="icon" id="github-icon">
+                <img src="./assets/cblack.svg" alt="chess.com prof" class="icon" id="chess-icon">
+            </div>                       
+        </div>  
+        <div class="section_text">
+            <p class="section__text_p1">Hello, I'm</p>
+            <h1 class="title">Rayan Taghizadeh</h1>
+            <p class="section__text_p2">Student at UC Berkeley</p>
+        </div>
+    </section>
+    <section id="about_me">
+        <h1 class="sub_headers">About Me</h1>
+        <p id="about_me_text"></p>
+    </section>
+    <section id="experience">
+        <h1 class="sub_headers">Experience</h1>
+        <p id="pe1">I've participated in many unique environments; hover to learn more.</p>
+        <div class="exp_images_container">
+            <button class="exp_image_button" onmouseover="showTooltip('tesla')" onclick="toggleTooltip('tesla')">
+                <img class="exp_images" id="tesla" src="./assets/tesla.svg">
+            </button>
+            <button class="exp_image_button" onmouseover="showTooltip('rivian')" onclick="toggleTooltip('rivian')">
+                <img class="exp_images" id="rivian" src="./assets/rivian.svg">
+            </button>
+            <button class="exp_image_button" onmouseover="showTooltip('bdab')" onclick="toggleTooltip('bdab')">
+                <img class="exp_images" id="bdab" src="./assets/bigdata.png">
+            </button>
+            <button class="exp_image_button" onmouseover="showTooltip('gene')" onclick="toggleTooltip('gene')">
+                <img class="exp_images" id="gene" src="./assets/genentech.svg">
+            </button>
+        </div>
+        <div id="tooltip_container">
+            <div id="tooltip_logo"></div>
+            <div id="tooltip_text">
+                <h3 id="tooltip_title"></h3>
+                <p id="tooltip_description"></p>
+            </div>
+        </div>
+    </section> 
+    <section id="projects">
+        <h1 class="sub_headers">Projects</h1>
+        <div class="project">
+            <div class="project_content">
+                <h2 class="project_title">Large Yoda Model</h2>
+                <img class="project_image" src="./assets/yoda.svg" alt="Project 1 Image">
+                <img class="paper_link" src="./assets/paper.svg" alt="link to paper" onclick="window.open('./assets/LYM.pdf', '_blank');">             
+            </div>
+            <div class="project_description">
+                <p class="projdescs" id="p1desc"></p>
+                <p class="p_topics">Topics/tech: Python, LLMs, fine-tuning, LoRA</p>
+            </div>
+        </div>
+        <div class="project project_reverse">
+            <div class="project_content">
+                <h2 class="project_title">Pink House Predictions</h2>
+                <img class="project_image" src="./assets/php.svg" alt="Project 2 Image">
+                <img class="paper_link" src="./assets/github.svg" alt="link to paper" onclick="window.open('https://github.com/rayantag/PHousePreds', '_blank');">  
+            </div>
+            <div class="project_description">
+                <p class="projdescs" id="p2desc"></p>
+                <p class="p_topics">Topics/tech: Python, React, HTML, CSS, Flask, Databases, Selenium, NNs</p>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project_content">
+                <h2 class="project_title">CurricuChemL</h2>
+                <img id="drug" class="project_image" src="./assets/pill.svg" alt="Project 3 Image">
+                <img class="paper_link" src="./assets/paper.svg" alt="link to paper" onclick="window.open('./assets/curricuchem.pdf', '_blank');">  
+            </div>
+            <div class="project_description">
+                <p class="projdescs" id="p3desc"></p>
+                <p class="p_topics">Topics/tech: Python, Reinforcement Learning, Drug Design</p>
+            </div>
+        </div>
+        <div class="project project_reverse">
+            <div class="project_content">
+                <h2 class="project_title">Eg5 - Cancer Inhibitor</h2>
+                <img class="project_image" src="./assets/formula.svg" alt="Project 2 Image">
+                <div id="slides_paper">
+                    <img class="paper_link" src="./assets/paper.svg" alt="link to paper" onclick="window.open('./assets/fellowship.pdf', '_blank');"> 
+                    <img class="paper_link" id="slides_l" src="./assets/layers.svg" alt="link to slides" onclick="window.open('./assets/mcb.pdf', '_blank');">  
+                </div>
+            </div>
+            <div class="project_description">
+                <p class="projdescs" id="p4desc"></p>
+                <p class="p_topics">Topics/tech: Benchling, Continuous & Endpoint Assays, PCR</p>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project_content">
+                <h2 class="project_title">The Enigma</h2>
+                <img class="project_image" src="./assets/cryptography.svg" alt="Project 3 Image">
+                <img class="paper_link" src="./assets/github.svg" alt="link to paper" onclick="window.open('https://github.com/rayantag/enigma', '_blank');">
+            </div>
+            <div class="project_description">
+                <p class="projdescs" id="p5desc"></p>
+                <p class="p_topics">Topics/tech: Java, Data Structures</p>
+            </div>
+        </div>
+    </section>
+    <section id="interests">
+        <h1 class="sub_headers">Interests</h1>
+        <div id="interests_total">
+            <div id="interests_menu">
+                <div id="menu_buttons">
+                    <button class="menu_button" onclick="showDesc('chess', this)">Chess</button>
+                    <button class="menu_button" onclick="showDesc('sports', this)">Sports</button>
+                    <button class="menu_button" onclick="showDesc('misc', this)">Misc</button>
+                </div>
+            </div>
+            <div id="interests_desc">
+                <p id="i_desc_par"></p>
+            </div>
+        </div>
+    </section>
+<!-- Footer Section -->
+    <footer id="footer">
+        <hr>
+        <p>Made possible with:</p>
+        <div class="footer-logos">
+            <img src="./assets/html.svg" alt="HTML Logo" class="footer-logo">
+            <img src="./assets/css.svg" alt="CSS Logo" class="footer-logo">
+            <img src="./assets/js.svg" alt="JavaScript Logo" class="footer-logo">
+            <img src="./assets/youtube.svg" alt="JavaScript Logo" class="footer-logo">
+            <img src="./assets/openai.svg" alt="JavaScript Logo" class="footer-logo">
+        </div>
+        <p>More technical experience:</p>
+        <ul class="footer-tech">
+            <li>Python</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>React</li>
+            <li>SQL</li>
+            <li>Tensorflow</li>
+            <li>PyTorch</li>
+            <li>JAX</li>
+            <li>AWS</li>
+            <li>GCP</li>
+            <li>Git</li>
+        </ul>
+        <p>Contact me at <a href="mailto:hi@gmail.com">rayant@berkeley.edu</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
