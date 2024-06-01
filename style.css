@@ -275,15 +275,11 @@ section {
 }
 
 .exp_images {
-    width: auto;
-    height: auto; 
-    max-height: 50px; 
-    max-width: 50px;
+    width: 500px;
+    height: 500px; 
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
-
-
 
 .exp_image_wrapper {
     position: relative;
