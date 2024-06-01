@@ -21,13 +21,11 @@ p {
     color: rgb(85, 85, 85);
 }
 
-/* TRANSITION on click */
-
 a, .btn {
     transition: all 300ms ease;
 }
 
-/* desktop navigation */
+/* Desktop navigation */
 nav, .nav-links {
     display: flex;
 }
@@ -56,20 +54,18 @@ nav {
 }
 
 .logo {
-    font-size: 100px; /* Adjust size as needed */
+    font-size: 100px; 
     font-weight: bold;
     color: black;
     text-align: center;
-    margin: 50px 0; /* Adjust margin as needed */
+    margin: 50px 0; 
 }
-
-
 
 .logo:hover {
     cursor: default;
 }
 
-/* hamburger menu */
+/* Hamburger menu */
 
 #hamburger-nav {
     display: none;
@@ -87,18 +83,18 @@ nav {
     height: 24px;
     width: 30px;
     cursor: pointer;
-    z-index: 10; /* Ensure the icon is above other elements initially */
+    z-index: 10; 
 }
 
 .hamburger-icon span {
     width: 100%;
     height: 2px;
     background-color: black;
-    transition: all 0.3s ease-in-out; /* Added missing 's' */
+    transition: all 0.3s ease-in-out; 
 }
 
 .hamburger-icon.open span {
-    background-color: black; /* Ensure the color is set */
+    background-color: black;
 }
 
 .hamburger-icon.open span:first-child {
@@ -119,13 +115,13 @@ nav {
 
 .menu-links {
     position: absolute;
-    top: 40px; /* Adjust to position below the hamburger icon */
+    top: 40px; 
     right: 0;
     background-color: white;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out; /* Specify which property to transition */
-    z-index: 9; /* Ensure the menu is below the icon initially */
+    transition: max-height 0.3s ease-in-out; 
+    z-index: 9; 
 }
 
 .menu-links a {
@@ -135,7 +131,7 @@ nav {
     font-size: 1.5rem;
     color: black;
     text-decoration: none;
-    transition: all 0.3s ease-in-out; /* Added missing 's' */
+    transition: all 0.3s ease-in-out; 
 }
 
 .menu-links li {
@@ -144,12 +140,12 @@ nav {
 
 .menu-links.open {
     max-height: 300px;
-    z-index: 11; /* Ensure the menu is above the icon when opened */
-    overflow: visible; /* Ensure the content is visible */
+    z-index: 11; 
+    overflow: visible; 
 }
 
 
-/* sections */
+/* Sections */
 
 section {
     padding-top: 4vh;
@@ -231,8 +227,8 @@ section {
 }
 
 .icon:hover {
-    transform: scale(1.1); /* Scale up the icons on hover */
-    transition: transform 0.3s; /* Smooth transition for hover effect */
+    transform: scale(1.1); 
+    transition: transform 0.3s; 
 }
 
 /* About Me */
@@ -257,6 +253,7 @@ section {
 }
 
 /* Experience */
+
 #experience {
     width: 80%;
     height: auto;
@@ -271,7 +268,7 @@ section {
     align-items: center;
     margin-top: 1rem;
     gap: 1rem;
-    justify-content: flex-start; /* Dynamically space icons */
+    justify-content: flex-start; 
 }
 
 .exp_images {
@@ -286,7 +283,6 @@ section {
     display: inline-block;
 }
 
-/* Tooltip container styling */
 #tooltip_container {
     visibility: hidden;
     width: auto;
@@ -310,7 +306,6 @@ section {
     justify-content: left;
 }
 
-/* Hover effects */
 #tesla:hover {
     filter: invert(31%) sepia(94%) saturate(7497%) hue-rotate(353deg) brightness(101%) contrast(102%);
 }
@@ -353,10 +348,11 @@ section {
 
 
 /* Projects */
+
 #projects {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Space between projects */
+    gap: 2rem; 
 }
 
 .project {
@@ -364,8 +360,8 @@ section {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    margin-bottom: 20px; /* New line: added margin bottom */
-    position: relative; /* New line: added relative positioning */
+    margin-bottom: 20px; 
+    position: relative; 
 }
 
 .project_reverse {
@@ -426,12 +422,12 @@ section {
     right: 10px;
     cursor: pointer;
     z-index: 1;
-    font-weight: bold; /* New line: make font bolder */
-    transition: transform 0.3s ease; /* New line: smooth transition for hover effect */
+    font-weight: bold; 
+    transition: transform 0.3s ease; 
 }
 
 .paper_link:hover {
-    transform: scale(1.1); /* New line: increase size on hover */
+    transform: scale(1.1); 
 }
 
 #slides_l {
@@ -446,10 +442,11 @@ section {
 .bold-blue-link {
     font-weight: bold;
     color: blue;
-    text-decoration: none; /* optional, to remove underline */
+    text-decoration: none; 
 }
 
 /* Interests */
+
 #interests {
     height: auto;
 }
@@ -505,7 +502,7 @@ section {
 #footer {
     padding: 1rem;
     text-align: center;
-    background-color: #f8f8f8; /* Light grey background color */
+    background-color: #f8f8f8; 
     margin-top: 2rem;
 }
 
@@ -518,12 +515,12 @@ section {
 .footer-logos {
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Space between logos */
+    gap: 1rem; 
     margin: 1rem 0;
 }
 
 .footer-logo {
-    height: 40px; /* Adjust size as needed */
+    height: 40px; 
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -534,7 +531,7 @@ section {
     margin: 1rem 0;
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Space between list items */
+    gap: 1rem; 
 }
 
 .footer-tech {
@@ -552,10 +549,10 @@ section {
 }
 
 .footer-tech li::before {
-    content: "■"; /* Square bullet */
+    content: "■"; 
     position: absolute;
     left: 0;
-    color: #007BFF; /* Bullet color */
+    color: #007BFF; 
 }
 
 
@@ -566,7 +563,7 @@ section {
 }
 
 #footer a {
-    color: #007BFF; /* Link color */
+    color: #007BFF;  
     text-decoration: none;
 }
 
@@ -575,7 +572,7 @@ section {
 }
 
 .footer-logo:hover {
-    transform: scale(1.1); /* Scale up by 10% */
+    transform: scale(1.1); 
 }
 
 /* Initial hidden state for sections */

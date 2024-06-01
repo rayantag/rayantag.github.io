@@ -80,7 +80,6 @@ function showTooltip(id) {
     tooltipContainer.style.visibility = 'visible';
     tooltipContainer.dataset.activeId = id;
 
-    // Highlight the hovered image
     document.querySelectorAll('.exp_images').forEach(img => img.classList.remove('hover-highlighted'));
     document.getElementById(id).classList.add('hover-highlighted');
 }
@@ -143,33 +142,28 @@ function showDesc(name, event) {
     }
     document.getElementById('i_desc_par').innerHTML = description;
 
-    // Remove active class from all buttons
     var buttons = document.querySelectorAll('.menu_button');
     buttons.forEach(function(button) {
         button.classList.remove('active');
     });
 
-    // Add active class to the clicked button
     event.classList.add('active');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to handle intersection events
     function handleIntersection(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing once the element is visible
+                observer.unobserve(entry.target); 
             }
         });
     }
 
-    // Create an Intersection Observer
     const observer = new IntersectionObserver(handleIntersection, {
-        threshold: 0.1 // Trigger the event when 10% of the element is visible
+        threshold: 0.1 
     });
 
-    // Observe each section
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         observer.observe(section);

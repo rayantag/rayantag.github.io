@@ -12,6 +12,7 @@
     }
 
     /* Profile section */
+
     #profile {
         display: flex;
         flex-direction: column;
@@ -78,7 +79,7 @@
 
     .exp_images_container {
         flex-direction: column;
-        gap: 1rem; /* Adjust this value to get the desired spacing */
+        gap: 1rem; 
         justify-content: center;
     }
 
@@ -87,8 +88,8 @@
     }
 
     #tooltip_container {
-        margin: 5rem auto; /* Re-center and adjust margins */
-        max-width: 95%; /* Ensure the tooltip does not exceed screen width */
+        margin: 5rem auto; 
+        max-width: 95%; 
         justify-content: center;
         height: auto;
     }
@@ -106,14 +107,14 @@
     }
 
     .footer-tech li {
-        flex: 1 1 45%; /* Adjust the percentage to fit your design needs */
+        flex: 1 1 45%; 
         text-align: center;
-        padding-left: 0; /* Remove padding-left to align text centrally */
+        padding-left: 0; 
         box-sizing: border-box;
     }
 
     .footer-tech li::before {
-        display: none; /* Hide the square bullet in smaller screens */
+        display: none; 
     }
 }
 
