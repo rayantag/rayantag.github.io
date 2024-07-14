@@ -43,7 +43,7 @@ document.getElementById('p5desc').innerHTML = p5description;
 
 const interests_c = "I first picked up a chess piece when I was four years old and haven't put it down since. Throughout my time playing, I have been: <br>■ UC Berkeley Team Captain<br> ■ 1x bronze medal 🥉 (tied for 1st) representing team USA at the U-12 world championship <br> ■ 4x junior national champion <br> ■ 6x junior all-American team <br> ■ >100 students taught through camps and lessons <br> ■ >2900 peak rating on chess.com in blitz and bullet (top 500 out of ~30,000,000 activate players)"
 const interests_s = "I have been playing soccer since I was five, and my favorite team is Arsenal FC. I also watch and play a variety of other sports somewhat competitively, including basketball (favorite team varies 🙂‍↕️), football (49ers and Ravens), and tennis."
-const interests_m = "Other current interests include cooking, reading, and walking. I've been told I spend too much time on Twitter. Potentially..."
+const interests_m = "Other current interests include cooking, reading, and walking."
 
 function showTooltip(id) {
     const tooltipContainer = document.getElementById('tooltip_container');
