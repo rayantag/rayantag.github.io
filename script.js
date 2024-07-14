@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-const aboutMeText = "Hi! My name is Rayan, and I study computer science 💻 and chemical biology 🧬 at UC Berkeley. My interests lie within the broad lens of applied deep learning, from drug synthesis to computer vision for autonomous vehicles. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and attempt to lift weights when I'm not already hurt."
+const aboutMeText = "Hi! My name is Rayan, and I study computer science 💻 and chemical biology 🧬 at UC Berkeley. I am interested in using computer science to increase human safety and longevity, addressed in fields like drug discovery, computer vision for autonomy, reliability, and many others. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and lift weights when I'm not already hurt."
 document.getElementById('about_me_text').innerHTML = aboutMeText;
 
 const p1description = "An exploration into methods of LLM fine-tuning to adapt to various syntactic structures ('Yoda-like', in this example). Hyperparameters included varying LoRA rank, target modules, and joint training. Trained on a Kaggle Yoda dataset and benchmarked with loss function and Perplexity score metrics. Exciting, this endeavor was."
@@ -41,7 +41,7 @@ document.getElementById('p4desc').innerText = p4description;
 const p5description = "Program to encrypt and decrypt cryptographic messages akin to the Engima machine used in WW2, via progressive substitution ciphers performed by rotors. Didn't work so well in the 1940s, so I wouldn't put too much faith in it now. <a href='https://inst.eecs.berkeley.edu/~cs61b/sp22/materials/proj/proj1/index.html' target='_blank' class='bold-blue-link'>Assignment description</a>"
 document.getElementById('p5desc').innerHTML = p5description;
 
-const interests_c = "I first picked up a chess piece when I was four years old and haven't put it down since. Throughout my time playing, I have been: <br>■ UC Berkeley Board 1<br> ■ 1x bronze medal 🥉 (tied for 1st) representing team USA at the U-12 world championship <br> ■ 4x junior national champion <br> ■ 6x junior all-American team <br> ■ >100 students taught through camps and lessons <br> ■ >2900 peak rating on chess.com in blitz and bullet (top 200 in the world)"
+const interests_c = "I first picked up a chess piece when I was four years old and haven't put it down since. Throughout my time playing, I have been: <br>■ UC Berkeley Team Captain<br> ■ 1x bronze medal 🥉 (tied for 1st) representing team USA at the U-12 world championship <br> ■ 4x junior national champion <br> ■ 6x junior all-American team <br> ■ >100 students taught through camps and lessons <br> ■ >2900 peak rating on chess.com in blitz and bullet (top 500 out of ~30,000,000 activate players)"
 const interests_s = "I have been playing soccer since I was five, and my favorite team is Arsenal FC. I also watch and play a variety of other sports somewhat competitively, including basketball (favorite team varies 🙂‍↕️), football (49ers and Ravens), and tennis."
 const interests_m = "Other current interests include cooking, reading, and walking. I've been told I spend too much time on Twitter. Potentially..."
 
@@ -59,7 +59,7 @@ function showTooltip(id) {
         case 'tesla':
             logoSrc = './assets/tesla.svg';
             title = 'Engineering Intern, Summer 2024';
-            description = 'Coming soon!';
+            description = 'Linking the Cell Reliability and Data Engineering teams by creating tools to automate cell test analysis.';
             break;
         case 'rivian':
             logoSrc = './assets/rivian.svg';
