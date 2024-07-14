@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('chess-icon').addEventListener('click', function() {
         window.open('https://www.chess.com/member/fibrinogen', '_blank');
     });
+
+    document.getElementById('email-icon').addEventListener('click', function() {
+        window.location.href = 'mailto:rayant@berkeley.edu';
+    });
 });
 
 const aboutMeText = "Hi! My name is Rayan, and I study computer science 💻 and chemical biology 🧬 at UC Berkeley. My interests lie within the broad lens of applied deep learning, from drug synthesis to computer vision for autonomous vehicles. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and attempt to lift weights when I'm not already hurt."
@@ -84,48 +88,9 @@ function showTooltip(id) {
     document.getElementById(id).classList.add('hover-highlighted');
 }
 
-function hideTooltip() {
-    const tooltipContainer = document.getElementById('tooltip_container');
-    if (!tooltipContainer.dataset.keepVisible) {
-        tooltipContainer.style.visibility = 'hidden';
-        tooltipContainer.dataset.activeId = '';
-        document.querySelectorAll('.exp_images').forEach(img => img.classList.remove('hover-highlighted'));
-    }
-}
-
-function toggleTooltip(id) {
-    const tooltipContainer = document.getElementById('tooltip_container');
-    if (tooltipContainer.style.visibility === 'visible' && tooltipContainer.dataset.activeId === id) {
-        tooltipContainer.style.visibility = 'hidden';
-        tooltipContainer.dataset.activeId = '';
-        tooltipContainer.dataset.keepVisible = false;
-        document.querySelectorAll('.exp_images').forEach(img => img.classList.remove('highlighted'));
-    } else {
-        showTooltip(id);
-        tooltipContainer.dataset.keepVisible = true;
-        document.getElementById(id).classList.add('highlighted');
-    }
-}
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     showDesc('chess', document.querySelector('.menu_button'));
 });
-
-function toggleTooltip(id) {
-    const tooltipContainer = document.getElementById('tooltip_container');
-    if (tooltipContainer.style.visibility === 'visible' && tooltipContainer.dataset.activeId === id) {
-        tooltipContainer.style.visibility = 'hidden';
-        tooltipContainer.dataset.activeId = '';
-    } else {
-        showTooltip(id);
-        tooltipContainer.dataset.activeId = id;
-    }
-}
-
 
 function showDesc(name, event) {
     let description;
@@ -174,6 +139,3 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(project);
     });
 });
-
-
-

@@ -78,7 +78,7 @@
     }
 
     .exp_images_container {
-        flex-direction: column;
+        flex-direction:row;
         gap: 1rem; 
         justify-content: center;
     }
@@ -87,6 +87,11 @@
         margin-bottom: 1rem;
     }
 
+    .exp_images {
+        border: 2px solid lightgray; /* Light border color */
+        border-radius: 10px; /* Rounded corners */
+        padding: 5px; /* Optional: Add padding inside the border */
+    }
     #tooltip_container {
         margin: 5rem auto; 
         max-width: 95%; 
