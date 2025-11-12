@@ -46,9 +46,9 @@ class ParticleNetwork {
                 y: Math.random() * this.canvas.height,
                 vx: (Math.random() - 0.5) * 0.7,
                 vy: (Math.random() - 0.5) * 0.7,
-                radius: Math.random() * 2.5 + 1.5,
+                radius: Math.random() * 1.5 + 0.8,
                 color: this.colors[colorIndex],
-                baseSize: Math.random() * 2.5 + 1.5,
+                baseSize: Math.random() * 1.5 + 0.8,
                 pulseOffset: Math.random() * Math.PI * 2
             });
         }
@@ -77,13 +77,13 @@ class ParticleNetwork {
         const pulse = Math.sin(time * 0.002 + particle.pulseOffset) * 0.3 + 1;
         const currentRadius = particle.baseSize * pulse;
 
-        // Glow effect
+        // Glow effect (dimmer)
         const gradient = this.ctx.createRadialGradient(
             particle.x, particle.y, 0,
             particle.x, particle.y, currentRadius * 3
         );
-        gradient.addColorStop(0, `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, 0.8)`);
-        gradient.addColorStop(0.5, `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, 0.3)`);
+        gradient.addColorStop(0, `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, 0.4)`);
+        gradient.addColorStop(0.5, `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, 0.15)`);
         gradient.addColorStop(1, `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, 0)`);
 
         // Draw glow
@@ -92,10 +92,10 @@ class ParticleNetwork {
         this.ctx.fillStyle = gradient;
         this.ctx.fill();
 
-        // Draw core
+        // Draw core (dimmer)
         this.ctx.beginPath();
         this.ctx.arc(particle.x, particle.y, currentRadius, 0, Math.PI * 2);
-        this.ctx.fillStyle = `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, 0.9)`;
+        this.ctx.fillStyle = `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, 0.5)`;
         this.ctx.fill();
 
         particle.radius = currentRadius;
@@ -109,7 +109,7 @@ class ParticleNetwork {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 150) {
-                const opacity = 0.4 * (1 - distance / 150);
+                const opacity = 0.2 * (1 - distance / 150);
 
                 // Create gradient between particle colors
                 const gradient = this.ctx.createLinearGradient(
@@ -136,7 +136,7 @@ class ParticleNetwork {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < this.mouse.radius) {
-                const opacity = 0.8 * (1 - distance / this.mouse.radius);
+                const opacity = 0.5 * (1 - distance / this.mouse.radius);
 
                 // Gradient from particle color to white (cursor)
                 const gradient = this.ctx.createLinearGradient(
