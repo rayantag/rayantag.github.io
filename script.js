@@ -56,6 +56,11 @@ function showTooltip(id) {
     let title;
 
     switch(id) {
+        case 'sambanova':
+            logoSrc = './assets/sambanova.svg';
+            title = 'Current Position';
+            description = 'placeholder';
+            break;
         case 'tesla':
             logoSrc = './assets/tesla.svg';
             title = 'Engineering Intern, Summer 2024';
