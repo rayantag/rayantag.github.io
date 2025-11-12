@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-const aboutMeText = "Hi! My name is Rayan, and I study computer science 💻 and chemical biology 🧬 at UC Berkeley. I am interested in using computer science to increase human safety and longevity, addressed in fields like drug discovery, computer vision for autonomy, reliability, and many others. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and lift weights when I'm not already hurt."
+const aboutMeText = "Hi! My name is Rayan, and I studied computer science 💻 and chemical biology 🧬 at UC Berkeley. I am interested in using computer science to increase human safety and longevity, addressed in fields like drug discovery, computer vision for autonomy, reliability, and many others. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and lift weights when I'm not already hurt."
 document.getElementById('about_me_text').innerHTML = aboutMeText;
 
 const p1description = "An exploration into methods of LLM fine-tuning to adapt to various syntactic structures ('Yoda-like', in this example). Hyperparameters included varying LoRA rank, target modules, and joint training. Trained on a Kaggle Yoda dataset and benchmarked with loss function and Perplexity score metrics. Exciting, this endeavor was."
@@ -56,6 +56,11 @@ function showTooltip(id) {
     let title;
 
     switch(id) {
+        case 'sambanova':
+            logoSrc = './assets/sambanova.svg';
+            title = 'Current Position';
+            description = 'placeholder';
+            break;
         case 'tesla':
             logoSrc = './assets/tesla.svg';
             title = 'Engineering Intern, Summer 2024';
@@ -81,7 +86,9 @@ function showTooltip(id) {
     tooltipLogo.innerHTML = `<img src="${logoSrc}" alt="${id} logo">`;
     tooltipDescription.innerHTML = description;
     tooltipTitle.textContent = title;
-    tooltipContainer.style.visibility = 'visible';
+
+    // Use smooth transition
+    tooltipContainer.classList.add('show');
     tooltipContainer.dataset.activeId = id;
 
     document.querySelectorAll('.exp_images').forEach(img => img.classList.remove('hover-highlighted'));
@@ -120,13 +127,13 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
-        threshold: 0.1 
+        threshold: 0.1
     });
 
     const sections = document.querySelectorAll('section');
@@ -139,3 +146,30 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(project);
     });
 });
+
+// Rotating text functionality
+const rotatingTexts = [
+    "Student at UC Berkeley",
+    "Software Engineer",
+    "Chess Player"
+];
+let currentTextIndex = 0;
+
+function rotateText() {
+    const textElement = document.querySelector('.section__text_p2');
+
+    // Fade out
+    textElement.classList.add('fade');
+
+    setTimeout(() => {
+        // Change text
+        currentTextIndex = (currentTextIndex + 1) % rotatingTexts.length;
+        textElement.textContent = rotatingTexts[currentTextIndex];
+
+        // Fade in
+        textElement.classList.remove('fade');
+    }, 500); // Wait for fade out to complete
+}
+
+// Start rotation every 3 seconds
+setInterval(rotateText, 3000);

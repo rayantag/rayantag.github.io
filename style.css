@@ -15,6 +15,7 @@ body {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset for fixed header */
 }
 
 p {
@@ -46,11 +47,28 @@ nav {
     color: black;
     text-decoration: none;
     text-decoration-color: white;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: grey;
-    text-decoration-color: rgb(181, 181, 181);
+    color: #007bff;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .logo {
@@ -190,8 +208,14 @@ section {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    object-fit: cover; 
+    object-fit: cover;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25), 0px 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section_pic_container img:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3), 0px 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .section_text {
@@ -219,6 +243,11 @@ section {
     margin-bottom: 1rem;
     font-weight: 600;
     text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.section__text_p2.fade {
+    opacity: 0;
 }
 
 #socials-container {
@@ -232,11 +261,14 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .icon:hover {
-    transform: scale(1.1); 
-    transition: transform 0.3s; 
+    transform: scale(1.15);
+    background-color: rgba(0, 123, 255, 0.1);
 }
 
 #email-icon {
@@ -254,14 +286,32 @@ section {
 
 #about_me_text {
     font-size: 1.2rem;
-    line-height: 1.5em;
+    line-height: 1.8em;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .sub_headers {
     font-weight: 500;
     font-size: 2.4rem;
     font-family: "Roboto", sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.sub_headers::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #00bfff);
+    border-radius: 2px;
 }
 
 /* Experience */
@@ -290,15 +340,26 @@ section {
 
 #tooltip_container {
     visibility: hidden;
+    opacity: 0;
     width: auto;
     height: 25%;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
     border-image: linear-gradient(#ee2020, #828c77) 30;
     border-width: 4px;
     border-style: solid;
     margin: 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+#tooltip_container.show {
+    visibility: visible;
+    opacity: 1;
 }
 
 #tooltip_logo img {
@@ -309,6 +370,10 @@ section {
 #tooltip_text {
     padding: 1rem;
     justify-content: left;
+}
+
+#sambanova:hover {
+    filter: invert(45%) sepia(98%) saturate(2076%) hue-rotate(358deg) brightness(101%) contrast(101%);
 }
 
 #tesla:hover {
@@ -332,12 +397,18 @@ section {
     background: none;
     padding: 0;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.exp_image_button:hover {
+    transform: translateY(-5px);
 }
 
 .exp_images {
     width: 65px;
     height: 65px;
     object-fit: contain;
+    transition: all 0.3s ease;
 }
 
 .exp_images:hover, .hover-highlighted {
@@ -354,7 +425,7 @@ section {
 #projects {
     display: flex;
     flex-direction: column;
-    gap: 2rem; 
+    gap: 2rem;
 }
 
 .project {
@@ -376,12 +447,18 @@ section {
     gap: 1rem;
     padding: 1rem;
     border-radius: 10px;
-    background-color: #f0f8ff; 
-    box-shadow: 0 8px 16px rgba(85, 75, 157, 0.1); 
+    background-color: #f0f8ff;
+    box-shadow: 0 8px 16px rgba(85, 75, 157, 0.1);
     height: 175px;
     width: 300px;
     align-items: center;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project_content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(85, 75, 157, 0.2);
 }
 
 .project_title {
@@ -486,22 +563,22 @@ section {
     cursor: pointer;
     transition: background-color 0.3s, border-left 0.3s;
     padding: 15px 10px;
-    margin-bottom: 10px; 
-    border-left: 4px solid transparent; 
+    margin-bottom: 10px;
+    border-left: 4px solid transparent;
 }
 
 .menu_button:hover,
 .menu_button.active {
-    background-color: #e0e7ff; 
-    border-left: 4px solid #007bff; 
-    color: #007bff;  
+    background-color: #e0e7ff;
+    border-left: 4px solid #007bff;
+    color: #007bff;
 }
 
 #interests_desc {
     flex: 3;
     padding-left: 20px;
-    font-size: 1rem; 
-    line-height: 1.6; 
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Footer */
