@@ -86,7 +86,9 @@ function showTooltip(id) {
     tooltipLogo.innerHTML = `<img src="${logoSrc}" alt="${id} logo">`;
     tooltipDescription.innerHTML = description;
     tooltipTitle.textContent = title;
-    tooltipContainer.style.visibility = 'visible';
+
+    // Use smooth transition
+    tooltipContainer.classList.add('show');
     tooltipContainer.dataset.activeId = id;
 
     document.querySelectorAll('.exp_images').forEach(img => img.classList.remove('hover-highlighted'));
