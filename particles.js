@@ -7,9 +7,6 @@ class ParticleNetwork {
         this.mouse = { x: null, y: null, radius: 200 };
         this.colors = [
             { r: 0, g: 123, b: 255 },     // Blue
-            { r: 138, g: 43, b: 226 },    // Purple
-            { r: 255, g: 20, b: 147 },    // Pink
-            { r: 0, g: 255, b: 255 },     // Cyan
             { r: 255, g: 107, b: 53 }     // Orange
         ];
 
