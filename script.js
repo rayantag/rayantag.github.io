@@ -125,13 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
-        threshold: 0.1 
+        threshold: 0.1
     });
 
     const sections = document.querySelectorAll('section');
@@ -144,3 +144,30 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(project);
     });
 });
+
+// Rotating text functionality
+const rotatingTexts = [
+    "Student at UC Berkeley",
+    "Software Engineer",
+    "Chess Player"
+];
+let currentTextIndex = 0;
+
+function rotateText() {
+    const textElement = document.querySelector('.section__text_p2');
+
+    // Fade out
+    textElement.classList.add('fade');
+
+    setTimeout(() => {
+        // Change text
+        currentTextIndex = (currentTextIndex + 1) % rotatingTexts.length;
+        textElement.textContent = rotatingTexts[currentTextIndex];
+
+        // Fade in
+        textElement.classList.remove('fade');
+    }, 500); // Wait for fade out to complete
+}
+
+// Start rotation every 3 seconds
+setInterval(rotateText, 3000);

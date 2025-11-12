@@ -219,6 +219,11 @@ section {
     margin-bottom: 1rem;
     font-weight: 600;
     text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.section__text_p2.fade {
+    opacity: 0;
 }
 
 #socials-container {
