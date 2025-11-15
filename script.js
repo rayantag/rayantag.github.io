@@ -57,7 +57,7 @@ function showTooltip(id) {
 
     switch(id) {
         case 'sambanova':
-            logoSrc = './assets/sambanova.svg';
+            logoSrc = './assets/sambanova_logo.png';
             title = 'Current Position';
             description = 'placeholder';
             break;
