@@ -58,13 +58,13 @@ function showTooltip(id) {
     switch(id) {
         case 'sambanova':
             logoSrc = './assets/sambanova_logo.png';
-            title = 'Current Position';
-            description = 'placeholder';
+            title = 'Software Engineer (Compiler)';
+            description = 'I work within Sambanova\'s compiler stack, translating LLMs into code that ran be run on the RDU.';
             break;
         case 'tesla':
             logoSrc = './assets/tesla.svg';
             title = 'Engineering Intern, Summer 2024';
-            description = 'Linking the Cell Reliability and Data Engineering teams by creating tools to automate cell test analysis.';
+            description = 'I aligned the cell reliability and data engineering teams by migrating >10,000,000 rows of cell testing data onto a new, department-wide MySQL database. Furthermore, I coordinated with global test engineers to transition to a unified test tracker platform, automating data collection and aggregation. The test assistant interface I developed allowed engineers to track cell testing progress interactively, highlighting key metrics (i.e. voltage drop) through logs and graphs. This automation made it <b>90% faster</b> to detect failures than the previous manual process.';
             break;
         case 'rivian':
             logoSrc = './assets/rivian.svg';

@@ -329,8 +329,8 @@ section {
     display: flex;
     align-items: center;
     margin-top: 1rem;
-    gap: 1.5rem;
-    justify-content: flex-start; 
+    gap: 1rem;
+    justify-content: flex-start;
 }
 
 .exp_image_wrapper {
