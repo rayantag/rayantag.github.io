@@ -411,6 +411,11 @@ section {
     transition: all 0.3s ease;
 }
 
+#sambanova {
+    width: 90px;
+    height: 90px;
+}
+
 .exp_images:hover, .hover-highlighted {
     filter: grayscale(0%);
 }
