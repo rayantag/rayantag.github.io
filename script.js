@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-const aboutMeText = "Hi! My name is Rayan, and I studied computer science 💻 and chemical biology 🧬 at UC Berkeley. I am interested in using computer science to increase human safety and longevity, addressed in fields like drug discovery, computer vision for autonomy, reliability, and many others. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and lift weights when I'm not already hurt."
+const aboutMeText = "Hi! My name is Rayan, and am a Software Engineer at sambanova. I studied computer science 💻 and chemical biology 🧬 at UC Berkeley, and am generally interested in using computer science to increase human safety and longevity, addressed in fields like drug discovery, computer vision for autonomy, reliability, and other applications. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and attempt to run and lift weights."
 document.getElementById('about_me_text').innerHTML = aboutMeText;
 
 const p1description = "An exploration into methods of LLM fine-tuning to adapt to various syntactic structures ('Yoda-like', in this example). Hyperparameters included varying LoRA rank, target modules, and joint training. Trained on a Kaggle Yoda dataset and benchmarked with loss function and Perplexity score metrics. Exciting, this endeavor was."
@@ -57,14 +57,14 @@ function showTooltip(id) {
 
     switch(id) {
         case 'sambanova':
-            logoSrc = './assets/sambanova.svg';
-            title = 'Current Position';
-            description = 'placeholder';
+            logoSrc = './assets/sambanova_logo.png';
+            title = 'Software Engineer (Compiler)';
+            description = 'I work within Sambanova\'s compiler stack, translating LLMs into code that ran be run on the RDU.';
             break;
         case 'tesla':
             logoSrc = './assets/tesla.svg';
             title = 'Engineering Intern, Summer 2024';
-            description = 'Linking the Cell Reliability and Data Engineering teams by creating tools to automate cell test analysis.';
+            description = 'I aligned the cell reliability and data engineering teams by migrating >10,000,000 rows of cell testing data onto a new, department-wide MySQL database. Furthermore, I coordinated with global test engineers to transition to a unified test tracker platform, automating data collection and aggregation. The test assistant interface I developed allowed engineers to track cell testing progress interactively, highlighting key metrics (i.e. voltage drop) through logs and graphs. This automation made it <b>90% faster</b> to detect failures than the previous manual process.';
             break;
         case 'rivian':
             logoSrc = './assets/rivian.svg';
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Rotating text functionality
 const rotatingTexts = [
-    "Student at UC Berkeley",
+    "UC Berkeley Alunmi",
     "Software Engineer",
     "Chess Player"
 ];
