@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-const aboutMeText = "Hi! My name is Rayan, and am a Software Engineer at sambanova. I studied computer science 💻 and chemical biology 🧬 at UC Berkeley, and am generally interested in using computer science to increase human safety and longevity, addressed in fields like drug discovery, computer vision for autonomy, reliability, and other applications. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and attempt to run and lift weights."
+const aboutMeText = "Hi! My name is Rayan, and I am a Software Engineer at sambanova. I studied computer science 💻 and chemical biology 🧬 at UC Berkeley, and am generally interested in using computer science to increase human safety and longevity, addressed in fields like drug discovery, computer vision for autonomy, reliability, and other applications. At Berkeley, I was a project manager for <a href='https://bd.studentorg.berkeley.edu' target='_blank' class='bold-blue-link'>Big Data at Berkeley</a>, a developer for <a href='https://www.dailycal.org' target='_blank' class='bold-blue-link'>The Daily Californian</a> 🗞️, a member of CS course staff, and a 2x intramural soccer champion ⚽️. In my free time, I play chess ♟️, watch a variety of sports, and attempt to run and lift weights."
 document.getElementById('about_me_text').innerHTML = aboutMeText;
 
 const p1description = "An exploration into methods of LLM fine-tuning to adapt to various syntactic structures ('Yoda-like', in this example). Hyperparameters included varying LoRA rank, target modules, and joint training. Trained on a Kaggle Yoda dataset and benchmarked with loss function and Perplexity score metrics. Exciting, this endeavor was."
@@ -59,27 +59,46 @@ function showTooltip(id) {
         case 'sambanova':
             logoSrc = './assets/sambanova_logo.png';
             title = 'Software Engineer (Compiler)';
-            description = 'I work within Sambanova\'s compiler stack, translating LLMs into code that ran be run on the RDU.';
+            description = `I work within Sambanova\'s compiler stack, translating LLMs into code that ran be run on the RDU.`;
             break;
         case 'tesla':
             logoSrc = './assets/tesla.svg';
             title = 'Engineering Intern, Summer 2024';
-            description = 'I aligned the cell reliability and data engineering teams by migrating >10,000,000 rows of cell testing data onto a new, department-wide MySQL database. Furthermore, I coordinated with global test engineers to transition to a unified test tracker platform, automating data collection and aggregation. The test assistant interface I developed allowed engineers to track cell testing progress interactively, highlighting key metrics (i.e. voltage drop) through logs and graphs. This automation made it <b>90% faster</b> to detect failures than the previous manual process.';
+            description = `I aligned the cell reliability and data engineering teams by migrating >10,000,000 rows of cell testing 
+                data onto a new, department-wide MySQL database. Furthermore, I coordinated with global test engineers to transition 
+                to a unified test tracker platform, automating data collection and aggregation. The test assistant interface I 
+                developed allowed engineers to track cell testing progress interactively, highlighting key metrics (i.e. voltage drop) 
+                through logs and graphs. This automation made it <b>90% faster</b> to detect failures than the previous manual process.;`
             break;
         case 'rivian':
             logoSrc = './assets/rivian.svg';
             title = 'GenAI Software Engineer, Fall 2023 - Spring 2024';
-            description = "The <b>first task</b> was to build a pipeline to construct an external Design Failure Mode and Effect Analysis (DFMEA) database. Using Google's SERP API and the GPT-4 API, this function allowed reliability engineers to query information about EV parts not already included internally, eliminating the need for manual lookup. The <b>second project</b> involved reworking RivChat, the reliability team's interal ChatBot. We engineered a RAG-based agent capable of retrieving relevant information from their internal database via <a href='https://platform.openai.com/docs/guides/function-calling' target='_blank' class='bold-blue-link'>OpenAI's Function Calling</a>, and the generated external database through <a href='https://platform.openai.com/docs/guides/embeddings/use-cases' target='_blank' class='bold-blue-link'>embeddings</a>.";
+            description = `The <b>first task</b> was to build a pipeline to construct an external Design Failure Mode and Effect 
+            Analysis (DFMEA) database. Using Google's SERP API and the GPT-4 API, this function allowed reliability engineers to 
+            query information about EV parts not already included internally, eliminating the need for manual lookup. The <b>second 
+            project</b> involved reworking RivChat, the reliability team's interal ChatBot. We engineered a RAG-based agent capable 
+            of retrieving relevant information from their internal database via 
+            <a href='https://platform.openai.com/docs/guides/function-calling' target='_blank' class='bold-blue-link'>OpenAI's Function Calling</a>, 
+            and the generated external database through <a href='https://platform.openai.com/docs/guides/embeddings/use-cases' target='_blank' class='bold-blue-link'>embeddings</a>.`;
             break;
         case 'bdab':
             logoSrc = './assets/bigdata.png';
             title = 'Data Consultant -> Project Manager, Fall 2022 - Winter 2023';
-            description = "As a data consultant for <b>American Eagle</b> team, I helped write an optimization algorithm to minimize shipping costs by placing specific products in 1 of 7 national AE distribution centers. This was achieved through parsing millions of previous orders, placing specific emphasis on geographic biases, and products commonly ordered together. On the <b>Hologic</b> team, we implemented <a href='https://arxiv.org/abs/2103.03230' target='_blank' class='bold-blue-link'> Barlow Twins</a> on black and white images to generate dense breast cancer image embeddings, which were then used downstream to classify various characteristics. As a project manager for <b>Quokka Brew</b>, I led a team in gathering substantial information on market competition, UI/UX design, and product recommendations.";
+            description = `As a data consultant for <b>American Eagle</b> team, I helped write an optimization algorithm to 
+            minimize shipping costs by placing specific products in 1 of 7 national AE distribution centers. This was achieved 
+            through parsing millions of previous orders, placing specific emphasis on geographic biases, and products commonly 
+            ordered together. On the <b>Hologic</b> team, we implemented <a href='https://arxiv.org/abs/2103.03230' target='_blank' class='bold-blue-link'> 
+            Barlow Twins</a> on black and white images to generate dense breast cancer image embeddings, which were then used downstream to 
+            classify various characteristics. As a project manager for <b>Quokka Brew</b>, I led a team in gathering substantial information 
+            on market competition, UI/UX design, and product recommendations.`;
             break;
         case 'gene':
             logoSrc = './assets/genentech.svg';
             title = 'SMPC Data Science Intern, Summer 2022';
-            description = 'Only intern on the Small Molecule Process Chemistry (SMPC) team. Created an ETL Pipeline using SQLAlchemy to construct a relational database with over 700,000 reaction molecules to facilitate machine learning predictions; evaluated multi-objective optimization algorithms against ligands for catalytic reactions, while generating descriptive PowerBI and Tableau visualizations. The database was later applied towards publications by R&D scientists.';
+            description = `Only intern on the Small Molecule Process Chemistry (SMPC) team. Created an ETL Pipeline using SQLAlchemy 
+            to construct a relational database with over 700,000 reaction molecules to facilitate machine learning predictions; 
+            evaluated multi-objective optimization algorithms against ligands for catalytic reactions, while generating descriptive 
+            PowerBI and Tableau visualizations. The database was later applied towards publications by R&D scientists.`;
             break;
     }
 
@@ -149,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Rotating text functionality
 const rotatingTexts = [
-    "UC Berkeley Alunmi",
+    "UC Berkeley Alum",
     "Software Engineer",
     "Chess Player"
 ];
